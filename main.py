@@ -18,7 +18,7 @@ parser = argparse.ArgumentParser()
 
 ######################## Model parameters ########################
 home_dir = os.getcwd()
-parser.add_argument('--experiment_description', default='Exp1', type=str,
+parser.add_argument('--experiment_description', default='supervised r1', type=str,
                     help='Experiment Description')
 parser.add_argument('--run_description', default='run1', type=str,
                     help='Experiment Description')
@@ -26,7 +26,7 @@ parser.add_argument('--seed', default=0, type=int,
                     help='seed value')
 parser.add_argument('--training_mode', default='supervised', type=str,
                     help='Modes of choice: random_init, supervised, self_supervised, fine_tune, train_linear')
-parser.add_argument('--selected_dataset', default='Epilepsy', type=str,
+parser.add_argument('--selected_dataset', default='collecty', type=str,
                     help='Dataset of choice: sleepEDF, HAR, Epilepsy, pFD')
 parser.add_argument('--logs_save_dir', default='experiments_logs', type=str,
                     help='saving directory')
