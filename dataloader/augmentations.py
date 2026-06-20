@@ -39,8 +39,9 @@ def permutation(x, max_segments=5, seg_mode="random"):
                 splits = np.split(orig_steps, split_points)
             else:
                 splits = np.array_split(orig_steps, num_segs[i])
-            warp = np.concatenate(np.random.permutation(splits)).ravel()
-            ret[i] = pat[0,warp]
+            permuted_indices = np.random.permutation(len(splits))
+            warp = np.concatenate([splits[idx] for idx in permuted_indices]).ravel()
+            ret[i] = pat[:, warp]
         else:
             ret[i] = pat
     return torch.from_numpy(ret)
