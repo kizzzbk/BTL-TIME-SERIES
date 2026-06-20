@@ -9,7 +9,7 @@ from dataloader.dataloader import data_generator
 from trainer.trainer import Trainer, model_evaluate
 from models.TC import TC
 from utils import _calc_metrics, copy_Files
-from models.model import base_Model
+from models.model import base_Model, BaselineRNN
 # Args selections
 start_time = datetime.now()
 
@@ -83,7 +83,8 @@ train_dl, valid_dl, test_dl = data_generator(data_path, configs, training_mode)
 logger.debug("Data loaded ...")
 
 # Load Model
-model = base_Model(configs).to(device)
+# model = base_Model(configs).to(device)
+model = BaselineRNN(configs, rnn_type='LSTM', hidden_dim=128,bidirectional=True).to(device)
 temporal_contr_model = TC(configs, device).to(device)
 
 if training_mode == "fine_tune":
