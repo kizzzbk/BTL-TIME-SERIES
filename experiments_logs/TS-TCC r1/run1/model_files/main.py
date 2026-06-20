@@ -24,7 +24,7 @@ parser.add_argument('--run_description', default='run1', type=str,
                     help='Experiment Description')
 parser.add_argument('--seed', default=0, type=int,
                     help='seed value')
-parser.add_argument('--training_mode', default='train_linear', type=str,
+parser.add_argument('--training_mode', default='self_supervised', type=str,
                     help='Modes of choice: random_init, supervised, self_supervised, fine_tune, train_linear')
 parser.add_argument('--selected_dataset', default='collecty', type=str,
                     help='Dataset of choice: sleepEDF, HAR, Epilepsy, pFD')
