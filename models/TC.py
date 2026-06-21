@@ -87,8 +87,8 @@ class TC(nn.Module):
             encode_samples[i - 1] = z_aug2[:, t_samples + i, :].view(batch, self.num_channels)
         forward_seq = z_aug1[:, :t_samples + 1, :]
 
-        # c_t = self.seq_transformer(forward_seq)
-        c_t = self.seq_rnn(forward_seq)
+        c_t = self.seq_transformer(forward_seq)
+        # c_t = self.seq_rnn(forward_seq)
 
 
         pred = torch.empty((self.timestep, batch, self.num_channels)).float().to(self.device)
